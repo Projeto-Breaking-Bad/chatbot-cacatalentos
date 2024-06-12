@@ -1,3 +1,5 @@
+import random
+import re
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -29,8 +31,9 @@ pares = [
 # Criação do chatbot
 def chatbot(msg):
     for pattern, responses in pares:
-        if msg.lower() == pattern.lower():
-            return responses[0]
+        if re.match(pattern, msg, re.IGNORECASE):
+            return random.choice(responses)
+    return "Desculpe, não entendi o que você disse."
 
 # Rota para o chatbot
 @app.route("/chatbot", methods=["POST"])

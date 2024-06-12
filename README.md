@@ -11,6 +11,6 @@ O Caça Talentos é um chatbot desenvolvido em Python para ajudar estudantes e p
 
 ## Dependências
 - Flask: Um framework web leve para Python utilizado para criar o servidor que hospeda o chatbot.
-- - pip install Flask
+- pip install Flask
 - NLTK (Natural Language Toolkit): Uma biblioteca Python popular para processamento de linguagem natural, usada para criar o chatbot e compreender as perguntas dos usuários.
 - pip install nltk
