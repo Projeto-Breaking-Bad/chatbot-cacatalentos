@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preloader.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+            
+            document.getElementById("chat-box").innerHTML += "<p><strong>Você:</strong> " + userInput + "</p>";
+    
+            $.ajax({
+                url: "/chatbot",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ msg: userInput }),
+                success: function(data) {
+                    document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> " + data.response + "</p>";
+                }
+            });
+    
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+    <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libs/feather-icons/feather.min.js') }}"></script>
+    <!-- pace js -->
+    <script src="{{ url_for('static', filename='libs/pace-js/pace.min.js') }}"></script>
+
+    <!-- apexcharts -->
+    <script src="{{ url_for('static', filename='libs/apexcharts/apexcharts.min.js') }}"></script>
+
+    <!-- Plugins js-->
+    <script
+        src="{{ url_for('static', filename='libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/pages/allchart.js') }}"></script>
+
+    <!-- dashboard init -->
+    <script src="{{ url_for('static', filename='js/pages/dashboard.init.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

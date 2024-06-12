@@ -1,8 +1,22 @@
+import os
 import random
 import re
 from flask import Flask, render_template, request, jsonify
+from jinja2 import ChoiceLoader, FileSystemLoader
 
 app = Flask(__name__)
+
+# Obtém o caminho do diretório do script atual
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Configura o Flask para usar o caminho relativo ao diretório do script para templates
+app.template_folder = os.path.join(script_dir, 'templates')
+
+# Configura o Flask para usar o caminho relativo ao diretório do script para os arquivos estáticos
+app.jinja_loader = ChoiceLoader([
+    FileSystemLoader(os.path.join(script_dir, 'templates', 'view')),
+    FileSystemLoader(os.path.join(script_dir, 'templates', 'components')),
+])
 
 # Pares de respostas para o chatbot
 pares = [
@@ -86,4 +100,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
+    app.static_folder = os.path.join(script_dir, 'assets')
     app.run(debug=True)
