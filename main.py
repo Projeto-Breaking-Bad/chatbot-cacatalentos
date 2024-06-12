@@ -26,14 +26,52 @@ pares = [
         r"sair|tchau|até logo",
         ["Até mais! Se precisar de mais alguma coisa, estarei por aqui.", "Tchau! Tenha um bom dia."]
     ),
+    (
+        r"python|java|javascript|php",
+        ["Ótimo! Essas são ótimas escolhas. Existem muitas oportunidades nessas áreas!", "Essas linguagens de programação são muito populares no mercado atualmente."]
+    ),
+    (
+        r"desenvolvedor|programador",
+        ["Ser um desenvolvedor é uma ótima escolha de carreira! Existem muitas oportunidades para programadores atualmente."]
+    ),
+    (
+        r"engenharia de software|ciência da computação",
+        ["Essas são excelentes áreas para estudar! Existem muitas oportunidades de carreira em engenharia de software e ciência da computação."]
+    ),
+    (
+        r"tecnologia da informação|TI",
+        ["TI é uma área em constante crescimento! Existem muitas oportunidades de carreira em tecnologia da informação."]
+    ),
 ]
 
-# Criação do chatbot
+# Padrões relacionados a solicitação de notícias, cursos e empregos
+padroes_noticias = ["notícias", "últimas notícias", "novidades", "atualizações"]
+padroes_cursos = ["cursos", "aprender", "estudar", "formação", "capacitação"]
+padroes_empregos = ["emprego", "vagas", "trabalho", "oportunidades"]
+
+# Função para verificar se a mensagem contém um padrão relacionado a solicitação de notícias, cursos ou empregos
+def verifica_solicitacao(mensagem, padroes):
+    tokens = re.findall(r'\b\w+\b', mensagem.lower())  # Tokenização e conversão para minúsculas
+    # Verificar se algum dos padrões está presente nos tokens
+    for padrao in padroes:
+        if padrao in tokens:
+            return True
+    return False
+
+# Função para processar a mensagem do usuário e retornar a resposta do chatbot
 def chatbot(msg):
     for pattern, responses in pares:
         if re.match(pattern, msg, re.IGNORECASE):
             return random.choice(responses)
-    return "Desculpe, não entendi o que você disse."
+    
+    if verifica_solicitacao(msg, padroes_noticias):
+        return "Claro! Aqui estão algumas notícias para você..."
+    elif verifica_solicitacao(msg, padroes_cursos):
+        return "Ótimo! Aqui estão alguns cursos que podem te interessar..."
+    elif verifica_solicitacao(msg, padroes_empregos):
+        return "Legal! Aqui estão algumas vagas de emprego disponíveis..."
+    else:
+        return "Desculpe, não entendi o que você disse."
 
 # Rota para o chatbot
 @app.route("/chatbot", methods=["POST"])
