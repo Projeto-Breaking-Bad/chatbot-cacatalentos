@@ -3,6 +3,7 @@ import random
 import re
 from flask import Flask, render_template, request, jsonify
 from jinja2 import ChoiceLoader, FileSystemLoader
+from transformers import pipeline  # Importar a biblioteca transformers para análise de sentimento
 
 app = Flask(__name__)
 
@@ -17,6 +18,9 @@ app.jinja_loader = ChoiceLoader([
     FileSystemLoader(os.path.join(script_dir, 'templates', 'view')),
     FileSystemLoader(os.path.join(script_dir, 'templates', 'components')),
 ])
+
+# Carregar um modelo de NLP pré-treinado para análise de sentimento
+nlp_model = pipeline('sentiment-analysis')
 
 # Pares de respostas para o chatbot
 pares = [
@@ -72,6 +76,25 @@ def verifica_solicitacao(mensagem, padroes):
             return True
     return False
 
+# Funções de pré-processamento de texto
+def limpar_texto(texto):
+    # Remover caracteres especiais e dígitos
+    texto_limpo = re.sub(r'[^a-zA-Z\s]', '', texto)
+    texto_limpo = re.sub(r'\d', '', texto_limpo)
+    # Converter para minúsculas
+    texto_limpo = texto_limpo.lower()
+    return texto_limpo
+
+def tokenizar_texto(texto):
+    # Dividir o texto em palavras
+    palavras = texto.split()
+    return palavras
+
+# Função para análise de sentimento usando o modelo pré-treinado
+def analisar_sentimento(texto):
+    resultado = nlp_model(texto)
+    return resultado[0]['label']
+
 # Função para processar a mensagem do usuário e retornar a resposta do chatbot
 def chatbot(msg):
     for pattern, responses in pares:
@@ -85,7 +108,13 @@ def chatbot(msg):
     elif verifica_solicitacao(msg, padroes_empregos):
         return "Legal! Aqui estão algumas vagas de emprego disponíveis..."
     else:
-        return "Desculpe, não entendi o que você disse."
+        sentimento = analisar_sentimento(msg)
+        if sentimento == 'NEGATIVE':
+            return "Parece que você está com um sentimento negativo. Como posso ajudar?"
+        elif sentimento == 'POSITIVE':
+            return "Ótimo ver que você está com um sentimento positivo! Em que posso ajudar?"
+        else:
+            return "Interessante! Em que mais posso ajudar?"
 
 # Rota para o chatbot
 @app.route("/chatbot", methods=["POST"])
