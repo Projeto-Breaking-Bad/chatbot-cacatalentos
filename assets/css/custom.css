@@ -21,3 +21,12 @@
 .form-textarea {
     max-height:150px;
 }
+
+.btn-round {
+    border-radius: 50%;
+}
+
+.btn-round:hover {
+    background-color: #265180;
+    color: #fff;
+}
