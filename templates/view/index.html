@@ -14,16 +14,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 </head>
 <body>
-    <h1>Chatbot</h1>
-    <div id="chat-container">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <h1 class="mt-5 mb-5">Chatbot</h1>
+        </div>
         <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-        <button onclick="sendMessage()">Enviar</button>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="col-md-10">
+                <div class="form-floating">
+                    <textarea class="form-control form-textarea" placeholder="Digite sua mensagem..." id="user-text"></textarea>
+                    <label for="user-text">Digite sua mensagem...</label>
+                </div>
+            </div>
+            <div class="col-md-2 ms-2">
+                <button type="button" class="btn btn-primary btn-block" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>        
     </div>
 
     <script>
         function sendMessage() {
-            var userInput = document.getElementById("user-input").value;
+            var userInput = document.getElementById("user-text").value;
             if (userInput.trim() === "") return;
             
             document.getElementById("chat-box").innerHTML += "<p><strong>Você:</strong> " + userInput + "</p>";
@@ -38,7 +49,7 @@
                 }
             });
     
-            document.getElementById("user-input").value = "";
+            document.getElementById("user-text").value = "";
         }
     </script>
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

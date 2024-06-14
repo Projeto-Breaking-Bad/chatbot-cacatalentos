@@ -17,3 +17,7 @@
 #myBtn:hover {
     background-color: #0056b3;
 }
+
+.form-textarea {
+    max-height:150px;
+}
