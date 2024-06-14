@@ -306,7 +306,7 @@ File: Main Css File
           align-items: center;
   margin: 0 auto;
   height: 70px;
-  padding: 0 0 0 24px;
+  /* padding: 0 0 0 24px; */
 }
 .navbar-header .dropdown .show.header-item {
   background-color: var(--bs-gray-100);
@@ -547,11 +547,6 @@ body[data-topbar=dark] .app-search input.form-control::-webkit-input-placeholder
   .navbar-header .dropdown .dropdown-menu {
     right: 10px !important;
     left: 10px !important;
-  }
-}
-@media (max-width: 380px) {
-  .navbar-brand-box {
-    display: none;
   }
 }
 body[data-layout=horizontal] #page-topbar {
@@ -922,7 +917,7 @@ body[data-layout=horizontal] .footer {
   }
 }
 body[data-sidebar-size=sm] {
-  min-height: 1000px;
+  /*min-height: 1000px;*/
 }
 body[data-sidebar-size=sm] .main-content {
   margin-right: 70px;

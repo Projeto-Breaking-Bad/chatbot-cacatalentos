@@ -10,28 +10,45 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/preloader.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app-rtl.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 </head>
-<body>
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            <h1 class="mt-5 mb-5">Chatbot</h1>
-        </div>
-        <div id="chat-box"></div>
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="col-md-10">
-                <div class="form-floating">
-                    <textarea class="form-control form-textarea" placeholder="Digite sua mensagem..." id="user-text"></textarea>
-                    <label for="user-text">Digite sua mensagem...</label>
+<body data-layout="horizontal" data-topbar="dark">
+    <div id="layout-wrapper">
+        {% include 'navbar.html' %}
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-center">
+                        <h1 class="mb-5">Chatbot</h1>
+                    </div>
+                    <div id="chat-box"></div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="col-md-10">
+                            <div class="form-floating">
+                                <textarea class="form-control form-textarea" placeholder="Digite sua mensagem..." id="user-text"></textarea>
+                                <label for="user-text">Digite sua mensagem...</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 ms-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="sendMessage()">Enviar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-2 ms-2">
-                <button type="button" class="btn btn-primary btn-block" onclick="sendMessage()">Enviar</button>
-            </div>
-        </div>        
+        </div>
     </div>
-
+    {% include 'footer.html' %}
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
     <script>
         function sendMessage() {
             var userInput = document.getElementById("user-text").value;
