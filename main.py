@@ -3,7 +3,8 @@ import random
 import re
 from flask import Flask, render_template, request, jsonify
 from jinja2 import ChoiceLoader, FileSystemLoader
-from transformers import pipeline  # Importar a biblioteca transformers para análise de sentimento
+from transformers import pipeline
+import json
 
 app = Flask(__name__)
 
@@ -22,50 +23,17 @@ app.jinja_loader = ChoiceLoader([
 # Carregar um modelo de NLP pré-treinado para análise de sentimento
 nlp_model = pipeline('sentiment-analysis')
 
-# Pares de respostas para o chatbot
-pares = [
-    (
-        r"Oi|Olá|Ei",
-        ["Olá! Como posso ajudar você?", "Oi! Em que posso te ajudar?"]
-    ),
-    (
-        r"quero encontrar vagas de emprego",
-        ["Ótimo! Qual área você está procurando?", "Claro! Em qual área você está interessado?"]
-    ),
-    (
-        r"quero ver notícias",
-        ["Certamente! De qual área você gostaria de ver notícias?", "Claro! Qual área você está interessado em ver notícias?"]
-    ),
-    (
-        r"quero encontrar cursos",
-        ["Legal! Qual área você quer estudar?", "Ótimo! Em qual área você quer encontrar cursos?"]
-    ),
-    (
-        r"sair|tchau|até logo",
-        ["Até mais! Se precisar de mais alguma coisa, estarei por aqui.", "Tchau! Tenha um bom dia."]
-    ),
-    (
-        r"python|java|javascript|php",
-        ["Ótimo! Essas são ótimas escolhas. Existem muitas oportunidades nessas áreas!", "Essas linguagens de programação são muito populares no mercado atualmente."]
-    ),
-    (
-        r"desenvolvedor|programador",
-        ["Ser um desenvolvedor é uma ótima escolha de carreira! Existem muitas oportunidades para programadores atualmente."]
-    ),
-    (
-        r"engenharia de software|ciência da computação",
-        ["Essas são excelentes áreas para estudar! Existem muitas oportunidades de carreira em engenharia de software e ciência da computação."]
-    ),
-    (
-        r"tecnologia da informação|TI",
-        ["TI é uma área em constante crescimento! Existem muitas oportunidades de carreira em tecnologia da informação."]
-    ),
-]
+# Carregar dados do JSON
+with open(os.path.join(script_dir, 'chat_answers', 'dados_chatbot.json'), 'r', encoding='utf-8') as file:
+    dados_chatbot = json.load(file)
+
+# Extrair pares de respostas do JSON
+pares = [(item['padrao'], item['respostas']) for item in dados_chatbot['pares']]
 
 # Padrões relacionados a solicitação de notícias, cursos e empregos
-padroes_noticias = ["notícias", "últimas notícias", "novidades", "atualizações"]
-padroes_cursos = ["cursos", "aprender", "estudar", "formação", "capacitação"]
-padroes_empregos = ["emprego", "vagas", "trabalho", "oportunidades"]
+padroes_noticias = dados_chatbot['padroes_noticias']
+padroes_cursos = dados_chatbot['padroes_cursos']
+padroes_empregos = dados_chatbot['padroes_empregos']
 
 # Função para verificar se a mensagem contém um padrão relacionado a solicitação de notícias, cursos ou empregos
 def verifica_solicitacao(mensagem, padroes):
@@ -107,6 +75,8 @@ def chatbot(msg):
         return "Ótimo! Aqui estão alguns cursos que podem te interessar..."
     elif verifica_solicitacao(msg, padroes_empregos):
         return "Legal! Aqui estão algumas vagas de emprego disponíveis..."
+    elif "obrigado" in msg.lower():
+        return "De nada! Estou aqui para ajudar."
     else:
         sentimento = analisar_sentimento(msg)
         if sentimento == 'NEGATIVE':

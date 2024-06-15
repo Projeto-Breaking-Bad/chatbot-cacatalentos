@@ -1,0 +1,83 @@
+{
+    "pares": [
+        {
+            "padrao": "Oi|Olá|Ei",
+            "respostas": [
+                "Olá! Como posso ajudar você?",
+                "Oi! Em que posso te ajudar?"
+            ]
+        },
+        {
+            "padrao": "quero encontrar vagas de emprego",
+            "respostas": [
+                "Ótimo! Qual área você está procurando?",
+                "Claro! Em qual área você está interessado?"
+            ]
+        },
+        {
+            "padrao": "quero ver notícias",
+            "respostas": [
+                "Certamente! De qual área você gostaria de ver notícias?",
+                "Claro! Qual área você está interessado em ver notícias?"
+            ]
+        },
+        {
+            "padrao": "quero encontrar cursos",
+            "respostas": [
+                "Legal! Qual área você quer estudar?",
+                "Ótimo! Em qual área você quer encontrar cursos?"
+            ]
+        },
+        {
+            "padrao": "sair|tchau|até logo",
+            "respostas": [
+                "Até mais! Se precisar de mais alguma coisa, estarei por aqui.",
+                "Tchau! Tenha um bom dia."
+            ]
+        },
+        {
+            "padrao": "python|java|javascript|php",
+            "respostas": [
+                "Ótimo! Essas são ótimas escolhas. Existem muitas oportunidades nessas áreas!",
+                "Essas linguagens de programação são muito populares no mercado atualmente."
+            ]
+        },
+        {
+            "padrao": "desenvolvedor|programador",
+            "respostas": [
+                "Ser um desenvolvedor é uma ótima escolha de carreira! Existem muitas oportunidades para programadores atualmente."
+            ]
+        },
+        {
+            "padrao": "engenharia de software|ciência da computação",
+            "respostas": [
+                "Essas são excelentes áreas para estudar! Existem muitas oportunidades de carreira em engenharia de software e ciência da computação."
+            ]
+        },
+        {
+            "padrao": "tecnologia da informação|TI",
+            "respostas": [
+                "TI é uma área em constante crescimento! Existem muitas oportunidades de carreira em tecnologia da informação."
+            ]
+        }
+    ],
+    "padroes_noticias": [
+        "notícias",
+        "últimas notícias",
+        "novidades",
+        "atualizações"
+    ],
+    "padroes_cursos": [
+        "cursos",
+        "aprender",
+        "estudar",
+        "formação",
+        "capacitação"
+    ],
+    "padroes_empregos": [
+        "emprego",
+        "vagas",
+        "trabalho",
+        "oportunidades"
+    ]
+}
