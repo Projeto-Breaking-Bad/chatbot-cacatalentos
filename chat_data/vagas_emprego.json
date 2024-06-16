@@ -19,6 +19,16 @@
             "quantVagas": 2,
             "horas": "40 horas/semana",
             "cnpj": "23.456.789/0001-88"
+        },
+        {
+            "titulo": "Desenvolvedor Python - Estágio",
+            "descricao": "Procuramos desenvolvedor Python para integrar nossa equipe. Vaga para estágio.",
+            "areaAtuacao": "Desenvolvimento de Sistemas",
+            "salario": "R$ 9.000,00",
+            "requisitos": ["Experiência com Python", "Conhecimento em Django", "Banco de dados PostgreSQL", "Flexibilidade de horário"],
+            "quantVagas": 7,
+            "horas": "40 horas/semana",
+            "cnpj": "23.456.789/0001-88"
         }
     ]
 }
