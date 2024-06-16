@@ -23,9 +23,13 @@ app.jinja_loader = ChoiceLoader([
 # Carregar um modelo de NLP pré-treinado para análise de sentimento
 nlp_model = pipeline('sentiment-analysis')
 
-# Carregar dados do JSON
+# Carregar dados do JSON do chatbot
 with open(os.path.join(script_dir, 'chat_answers', 'dados_chatbot.json'), 'r', encoding='utf-8') as file:
     dados_chatbot = json.load(file)
+
+# Carregar dados do JSON das vagas de emprego
+with open(os.path.join(script_dir, 'chat_data', 'vagas_emprego.json'), 'r', encoding='utf-8') as file:
+    dados_vagas = json.load(file)
 
 # Extrair pares de respostas do JSON
 pares = [(item['padrao'], item['respostas']) for item in dados_chatbot['pares']]
@@ -74,7 +78,18 @@ def chatbot(msg):
     elif verifica_solicitacao(msg, padroes_cursos):
         return "Ótimo! Aqui estão alguns cursos que podem te interessar..."
     elif verifica_solicitacao(msg, padroes_empregos):
-        return "Legal! Aqui estão algumas vagas de emprego disponíveis..."
+        resposta = "Legal! Aqui estão algumas vagas de emprego disponíveis:\n"
+        for vaga in dados_vagas['vagas']:
+            resposta += f"\nTítulo: {vaga['titulo']}\n"
+            resposta += f"Descrição: {vaga['descricao']}\n"
+            resposta += f"Área de Atuação: {vaga['areaAtuacao']}\n"
+            resposta += f"Salário: {vaga['salario']}\n"
+            resposta += f"Requisitos: {', '.join(vaga['requisitos'])}\n"
+            resposta += f"Quantidade de Vagas: {vaga['quantVagas']}\n"
+            resposta += f"Horário: {vaga['horas']}\n"
+            resposta += f"CNPJ: {vaga['cnpj']}\n"
+            resposta += "-" * 20
+        return resposta
     elif "obrigado" in msg.lower():
         return "De nada! Estou aqui para ajudar."
     else:
