@@ -39,6 +39,26 @@
             "quantVagas": 2,
             "horas": "40 horas/semana",
             "cnpj": "45.678.901/0001-66"
+        },
+        {
+            "titulo": "Analista de Marketing",
+            "descricao": "Oportunidade para analista de marketing em uma empresa líder de mercado.",
+            "areaAtuacao": "Administração",
+            "salario": "R$ 6.000,00",
+            "requisitos": ["Graduação em Marketing", "Experiência na área", "Conhecimento em Google Analytics"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "56.789.012/0001-55"
+        },
+        {
+            "titulo": "Analista de Recursos Humanos",
+            "descricao": "Procuramos analista de recursos humanos para integrar nossa equipe.",
+            "areaAtuacao": "Administração",
+            "salario": "R$ 5.000,00",
+            "requisitos": ["Graduação em Administração", "Experiência na área", "Conhecimento em recrutamento e seleção"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "67.890.123/0001-44"
         }
     ]
 }

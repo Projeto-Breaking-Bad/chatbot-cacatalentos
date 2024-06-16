@@ -146,7 +146,9 @@ def chatbot_endpoint():
 # Rota para buscar vagas, cursos e notícias por área de atuação
 @app.route("/areasearch")
 def buscar():
-    area = request.args.get('area', default='', type=str)
+    # Obter a área ou áreas a partir dos parâmetros da URL
+    areas = request.args.get('area', default='', type=str).split(',')
+
     vagas_encontradas = []
     cursos_encontrados = []
     noticias_encontradas = []
@@ -165,18 +167,24 @@ def buscar():
 
     # Buscar vagas de emprego por área de atuação
     for vaga in dados_vagas['vagas']:
-        if area.lower() in vaga['areaAtuacao'].lower():
-            vagas_encontradas.append(vaga)
+        for area in areas:
+            if area.strip().lower() in vaga['areaAtuacao'].lower():
+                vagas_encontradas.append(vaga)
+                break  # Parar de verificar outras áreas se a vaga foi encontrada
 
     # Buscar cursos por área de atuação
     for curso in dados_cursos['cursos']:
-        if area.lower() in curso['areaAtuacao'].lower():
-            cursos_encontrados.append(curso)
+        for area in areas:
+            if area.strip().lower() in curso['areaAtuacao'].lower():
+                cursos_encontrados.append(curso)
+                break  # Parar de verificar outras áreas se o curso foi encontrado
 
     # Buscar notícias por área de atuação
     for noticia in dados_noticias['noticias']:
-        if area.lower() in noticia['areaAtuacao'].lower():
-            noticias_encontradas.append(noticia)
+        for area in areas:
+            if area.strip().lower() in noticia['areaAtuacao'].lower():
+                noticias_encontradas.append(noticia)
+                break  # Parar de verificar outras áreas se a notícia foi encontrada
 
     return jsonify({
         "vagas": vagas_encontradas,

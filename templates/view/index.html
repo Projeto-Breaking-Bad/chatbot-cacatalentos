@@ -24,20 +24,6 @@
                     <div class="d-flex justify-content-center">
                         <h1 class="mb-5">Chatbot</h1>
                     </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="col-md-11">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" placeholder="Digite áreas separadas por vírgula"
-                                    id="area-text">
-                                <label for="area-text">Digite áreas separadas por vírgula</label>
-                            </div>
-                        </div>
-                        <div class="col-md-2 ms-1">
-                            <button type="button" class="btn btn-primary btn-round" onclick="searchAreas()">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </div>
                     <div id="chat-box"></div>
                     <div class="d-flex align-items-center mb-4">
                         <div class="col-md-11">
@@ -140,6 +126,9 @@
                             </label>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center mb-4">
+                        <button type="button" class="btn btn-primary" onclick="searchAreas()">Buscar Áreas</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,9 +183,6 @@
                 return checkbox.value;
             });
 
-            // Atualizar a barra de pesquisa com os valores selecionados
-            document.getElementById("area-text").value = selectedAreas.join(", ");
-
             // Realizar a busca baseada nas áreas selecionadas
             $.ajax({
                 url: "/areasearch",
@@ -235,24 +221,16 @@
                                 + "<b>Data:</b> " + noticia.data + "<br></p>";
                         });
                     }
-
-                    if (resposta !== "") {
-                        document.getElementById("chat-box").innerHTML += resposta;
-                    } else {
-                        document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> Nenhum resultado encontrado.</p>";
+                    if (resposta === "") {
+                        resposta = "<p>Nenhum resultado encontrado para as áreas selecionadas.</p>";
                     }
-                },
-                error: function () {
-                    document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> Ocorreu um erro ao buscar informações.</p>";
+                    document.getElementById("chat-box").innerHTML += resposta;
+
+                    // Limpar as seleções dos checkboxes
+                    checkboxes.forEach(function (checkbox) {
+                        checkbox.checked = false;
+                    });
                 }
-            });
-
-            // Limpar o campo de texto após a busca
-            document.getElementById("area-text").value = "";
-
-            // Limpar as seleções dos checkboxes
-            checkboxes.forEach(function (checkbox) {
-                checkbox.checked = false;
             });
         }
 
