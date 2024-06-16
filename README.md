@@ -14,6 +14,8 @@ O Caça Talentos é um chatbot desenvolvido em Python para ajudar estudantes e p
 - pip install Flask
 - NLTK (Natural Language Toolkit): Uma biblioteca Python popular para processamento de linguagem natural, usada para criar o chatbot e compreender as perguntas dos usuários.
 - pip install nltk
+- pip install Jinja2
+- pip install transformers
 
 ## Endpoints
 
