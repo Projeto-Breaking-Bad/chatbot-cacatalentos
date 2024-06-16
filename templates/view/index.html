@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet"
-    href="{{ url_for('static', filename='libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}">
+        href="{{ url_for('static', filename='libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/preloader.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.min.css') }}">
@@ -23,6 +23,20 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-center">
                         <h1 class="mb-5">Chatbot</h1>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="col-md-11">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Digite áreas separadas por vírgula"
+                                    id="area-text">
+                                <label for="area-text">Digite áreas separadas por vírgula</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 ms-1">
+                            <button type="button" class="btn btn-primary btn-round" onclick="searchAreas()">
+                                <i class="bi bi-search"></i> Buscar
+                            </button>
+                        </div>
                     </div>
                     <div id="chat-box"></div>
                     <div class="d-flex align-items-center mb-4">
@@ -43,6 +57,86 @@
                         <button type="button" class="btn btn-secondary" onclick="fillInput('Ver notícias')">Notícias</button>
                         <button type="button" class="btn btn-secondary" onclick="fillInput('Encontrar cursos')">Cursos</button>
                     </div>
+                    <!-- <div class="d-flex flex-wrap gap-2 mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Comercial, Vendas"
+                                id="chkComercialVendas">
+                            <label class="form-check-label" for="chkComercialVendas">
+                                Comercial, Vendas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Telemarketing" id="chkTelemarketing">
+                            <label class="form-check-label" for="chkTelemarketing">
+                                Telemarketing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Logística" id="chkLogistica">
+                            <label class="form-check-label" for="chkLogistica">
+                                Logística
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Gastronomia" id="chkGastronomia">
+                            <label class="form-check-label" for="chkGastronomia">
+                                Gastronomia
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Administração" id="chkAdministracao">
+                            <label class="form-check-label" for="chkAdministracao">
+                                Administração
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Industrial, Produção"
+                                id="chkIndustrialProducao">
+                            <label class="form-check-label" for="chkIndustrialProducao">
+                                Industrial, Produção
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Serviços Gerais"
+                                id="chkServicosGerais">
+                            <label class="form-check-label" for="chkServicosGerais">
+                                Serviços Gerais
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Construção" id="chkConstrucao">
+                            <label class="form-check-label" for="chkConstrucao">
+                                Construção
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="TI, Telecomunicações"
+                                id="chkTITelecomunicacoes">
+                            <label class="form-check-label" for="chkTITelecomunicacoes">
+                                TI, Telecomunicações
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Segurança" id="chkSeguranca">
+                            <label class="form-check-label" for="chkSeguranca">
+                                Segurança
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Finanças, Economia"
+                                id="chkFinancasEconomia">
+                            <label class="form-check-label" for="chkFinancasEconomia">
+                                Finanças, Economia
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Saúde" id="chkSaude">
+                            <label class="form-check-label" for="chkSaude">
+                                Saúde
+                            </label>
+                        </div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -62,19 +156,19 @@
         function sendMessage() {
             var userInput = document.getElementById("user-text").value;
             if (userInput.trim() === "") return;
-            
+
             document.getElementById("chat-box").innerHTML += "<p><strong>Você:</strong> " + userInput + "</p>";
-    
+
             $.ajax({
                 url: "/chatbot",
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify({ msg: userInput }),
-                success: function(data) {
+                success: function (data) {
                     document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> " + data.response + "</p>";
                 }
             });
-    
+
             document.getElementById("user-text").value = "";
         }
 
@@ -83,12 +177,73 @@
             sendMessage();
         }
 
-        document.getElementById("user-text").addEventListener("keydown", function(event) {
+        document.getElementById("user-text").addEventListener("keydown", function (event) {
             if (event.key === "Enter" && !event.shiftKey) {
                 event.preventDefault();
                 sendMessage();
             }
         });
+
+        function searchAreas() {
+            var areasInput = document.getElementById("area-text").value;
+            var areasSelecionadas = areasInput.split(",").map(function (area) {
+                return area.trim();
+            });
+
+            $.ajax({
+                url: "/areasearch",
+                type: "GET",
+                data: { area: areasSelecionadas.join(',') },
+                success: function (data) {
+                    var resposta = "";
+                    if (data.vagas.length > 0) {
+                        resposta += "<p><strong>Vagas de Emprego:</strong></p>";
+                        data.vagas.forEach(function (vaga) {
+                            resposta += "<p><b>Título:</b> " + vaga.titulo + "<br>"
+                                + "<b>Descrição:</b> " + vaga.descricao + "<br>"
+                                + "<b>Salário:</b> " + vaga.salario + "<br>"
+                                + "<b>Requisitos:</b> " + vaga.requisitos.join(', ') + "<br>"
+                                + "<b>Quantidade de Vagas:</b> " + vaga.quantVagas + " Horas: " + vaga.horas + "<br>"
+                                + "<b>CNPJ:</b> " + vaga.cnpj + "<br></p>";
+                        });
+                    }
+                    if (data.cursos.length > 0) {
+                        resposta += "<p><strong>Cursos:</strong></p>";
+                        data.cursos.forEach(function (curso) {
+                            resposta += "<p><b>Título:</b> " + curso.titulo + "<br>"
+                                + "<b>Descrição:</b> " + curso.descricao + "<br>"
+                                + "<b>Área de Atuação:</b> " + curso.areaAtuacao + "<br>"
+                                + "<b>Preço:</b> " + curso.preco + "<br>"
+                                + "<b>Duração:</b> " + curso.duracao + "<br>"
+                                + "<a href='" + curso.link + "' target='_blank'>Mais informações</a><br></p>";
+                        });
+                    }
+                    if (data.noticias.length > 0) {
+                        resposta += "<p><strong>Notícias:</strong></p>";
+                        data.noticias.forEach(function (noticia) {
+                            resposta += "<p><b>Título:</b> " + noticia.titulo + "<br>"
+                                + "<b>Descrição:</b> " + noticia.descricao + "<br>"
+                                + "<b>Fonte:</b> " + noticia.fonte + "<br>"
+                                + "<b>Data:</b> " + noticia.data + "<br></p>";
+                        });
+                    }
+
+                    if (resposta !== "") {
+                        document.getElementById("chat-box").innerHTML += resposta;
+                    } else {
+                        document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> Nenhum resultado encontrado.</p>";
+                    }
+                },
+                error: function () {
+                    document.getElementById("chat-box").innerHTML += "<p><strong>Chatbot:</strong> Ocorreu um erro ao buscar informações.</p>";
+                }
+            });
+
+            // Limpar o campo de texto após a busca
+            document.getElementById("area-text").value = "";
+        }
+
+
     </script>
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='libs/metismenu/metisMenu.min.js') }}"></script>
