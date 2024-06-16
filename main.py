@@ -31,6 +31,14 @@ with open(os.path.join(script_dir, 'chat_answers', 'dados_chatbot.json'), 'r', e
 with open(os.path.join(script_dir, 'chat_data', 'vagas_emprego.json'), 'r', encoding='utf-8') as file:
     dados_vagas = json.load(file)
 
+# Carregar dados do JSON de cursos
+with open(os.path.join(script_dir, 'chat_data', 'cursos.json'), 'r', encoding='utf-8') as file:
+    dados_cursos = json.load(file)
+
+# Carregar dados do JSON de notícias
+with open(os.path.join(script_dir, 'chat_data', 'noticias.json'), 'r', encoding='utf-8') as file:
+    dados_noticias = json.load(file)
+
 # Extrair pares de respostas do JSON
 pares = [(item['padrao'], item['respostas']) for item in dados_chatbot['pares']]
 
@@ -72,11 +80,35 @@ def chatbot(msg):
     for pattern, responses in pares:
         if re.match(pattern, msg, re.IGNORECASE):
             return random.choice(responses)
-    
+
     if verifica_solicitacao(msg, padroes_noticias):
-        return "Claro! Aqui estão algumas notícias para você..."
+        resposta = "Claro! Aqui estão algumas notícias para você:<br><br>"
+        for noticia in dados_noticias['noticias']:
+            resposta += (
+                f"<b>Título:</b> {noticia['titulo']}<br>"
+                f"<b>Descrição:</b> {noticia['descricao']}<br>"
+                f"<b>Fonte:</b> {noticia['fonte']}<br>"
+                f"<b>Data:</b> {noticia['data']}<br>"
+                "<br>--------------------<br>"
+            )
+        # Remove qualquer espaço extra no final
+        return resposta.strip()
+
     elif verifica_solicitacao(msg, padroes_cursos):
-        return "Ótimo! Aqui estão alguns cursos que podem te interessar..."
+        resposta = "Ótimo! Aqui estão alguns cursos que podem te interessar:<br><br>"
+        for curso in dados_cursos['cursos']:
+            resposta += (
+                f"<b>Título:</b> {curso['titulo']}<br>"
+                f"<b>Descrição:</b> {curso['descricao']}<br>"
+                f"<b>Área de Atuação:</b> {curso['areaAtuacao']}<br>"
+                f"<b>Preço:</b> {curso['preco']}<br>"
+                f"<b>Duração:</b> {curso['duracao']}<br>"
+                f"<a href='{curso['link']}' target='_blank'>Mais informações</a><br>"
+                "<br>--------------------<br>"
+            )
+        # Remove qualquer espaço extra no final
+        return resposta.strip()
+
     elif verifica_solicitacao(msg, padroes_empregos):
         resposta = "Legal! Aqui estão algumas vagas de emprego disponíveis:<br><br>"
         for vaga in dados_vagas['vagas']:
@@ -92,6 +124,7 @@ def chatbot(msg):
             )
         # Remove qualquer espaço extra no final
         return resposta.strip()
+
     elif "obrigado" in msg.lower():
         return "De nada! Estou aqui para ajudar."
     else:

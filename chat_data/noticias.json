@@ -1,0 +1,16 @@
+{
+    "noticias": [
+        {
+            "titulo": "Novidades em Inteligência Artificial",
+            "descricao": "Novos avanços em IA prometem revolucionar diversas indústrias.",
+            "fonte": "TechCrunch",
+            "data": "2024-06-15"
+        },
+        {
+            "titulo": "Avanços na Medicina",
+            "descricao": "Pesquisadores descobrem novo tratamento para doenças crônicas.",
+            "fonte": "BBC",
+            "data": "2024-06-14"
+        }
+    ]
+}
