@@ -78,18 +78,20 @@ def chatbot(msg):
     elif verifica_solicitacao(msg, padroes_cursos):
         return "Ótimo! Aqui estão alguns cursos que podem te interessar..."
     elif verifica_solicitacao(msg, padroes_empregos):
-        resposta = "Legal! Aqui estão algumas vagas de emprego disponíveis:\n"
+        resposta = "Legal! Aqui estão algumas vagas de emprego disponíveis:<br><br>"
         for vaga in dados_vagas['vagas']:
-            resposta += f"\nTítulo: {vaga['titulo']}\n"
-            resposta += f"Descrição: {vaga['descricao']}\n"
-            resposta += f"Área de Atuação: {vaga['areaAtuacao']}\n"
-            resposta += f"Salário: {vaga['salario']}\n"
-            resposta += f"Requisitos: {', '.join(vaga['requisitos'])}\n"
-            resposta += f"Quantidade de Vagas: {vaga['quantVagas']}\n"
-            resposta += f"Horário: {vaga['horas']}\n"
-            resposta += f"CNPJ: {vaga['cnpj']}\n"
-            resposta += "-" * 20
-        return resposta
+            resposta += (
+                f"<b>Título:</b> {vaga['titulo']}<br>"
+                f"<b>Descrição:</b> {vaga['descricao']}<br>"
+                f"<b>Área de Atuação:</b> {vaga['areaAtuacao']}<br>"
+                f"<b>Salário:</b> {vaga['salario']}<br>"
+                f"<b>Requisitos:</b> {', '.join(vaga['requisitos'])}<br>"
+                f"<b>Quantidade de Vagas:</b> {vaga['quantVagas']} Horário: {vaga['horas']}<br>"
+                f"<b>CNPJ:</b> {vaga['cnpj']}<br>"
+                "<br>--------------------<br>"
+            )
+        # Remove qualquer espaço extra no final
+        return resposta.strip()
     elif "obrigado" in msg.lower():
         return "De nada! Estou aqui para ajudar."
     else:

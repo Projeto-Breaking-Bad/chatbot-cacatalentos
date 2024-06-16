@@ -2,17 +2,23 @@
     "vagas": [
         {
             "titulo": "Desenvolvedor Java",
-            "horas": "40 horas/semana",
-            "cnpj": "12.345.678/0001-99",
+            "descricao": "Oportunidade para desenvolvedor Java em uma empresa líder de mercado.",
             "areaAtuacao": "Desenvolvimento de Software",
             "salario": "R$ 8.000,00",
-            "requisitos": [
-                "Experiência com Java",
-                "Conhecimento em Spring Boot",
-                "Banco de dados MySQL"
-            ],
+            "requisitos": ["Experiência com Java", "Conhecimento em Spring Boot", "Banco de dados MySQL"],
             "quantVagas": 3,
-            "descricao": "Oportunidade para desenvolvedor Java em uma empresa líder de mercado."
+            "horas": "40 horas/semana",
+            "cnpj": "12.345.678/0001-99"
+        },
+        {
+            "titulo": "Desenvolvedor Python",
+            "descricao": "Procuramos desenvolvedor Python para integrar nossa equipe.",
+            "areaAtuacao": "Desenvolvimento de Software",
+            "salario": "R$ 7.000,00",
+            "requisitos": ["Experiência com Python", "Conhecimento em Django", "Banco de dados PostgreSQL"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "23.456.789/0001-88"
         }
     ]
 }
