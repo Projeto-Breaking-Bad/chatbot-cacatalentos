@@ -3,7 +3,7 @@
         {
             "titulo": "Curso de Python Avançado",
             "descricao": "Aprenda Python avançado com os melhores especialistas.",
-            "areaAtuacao": "Tecnologia",
+            "areaAtuacao": "TI, Telecomunicações",
             "preco": "R$ 500,00",
             "duracao": "3 meses",
             "link": "https://exemplo.com/curso-python"
@@ -11,7 +11,7 @@
         {
             "titulo": "Curso de Desenvolvimento Web",
             "descricao": "Construa sites modernos e responsivos com HTML, CSS e JavaScript.",
-            "areaAtuacao": "Web Development",
+            "areaAtuacao": "TI, Telecomunicações",
             "preco": "R$ 300,00",
             "duracao": "2 meses",
             "link": "https://exemplo.com/curso-web"

@@ -143,6 +143,47 @@ def chatbot_endpoint():
     response = chatbot(user_input)
     return jsonify({"response": response})
 
+# Rota para buscar vagas, cursos e notícias por área de atuação
+@app.route("/areasearch")
+def buscar():
+    area = request.args.get('area', default='', type=str)
+    vagas_encontradas = []
+    cursos_encontrados = []
+    noticias_encontradas = []
+
+    # Carregar dados do JSON das vagas de emprego
+    with open(os.path.join(script_dir, 'chat_data', 'vagas_emprego.json'), 'r', encoding='utf-8') as file:
+        dados_vagas = json.load(file)
+
+    # Carregar dados do JSON de cursos
+    with open(os.path.join(script_dir, 'chat_data', 'cursos.json'), 'r', encoding='utf-8') as file:
+        dados_cursos = json.load(file)
+
+    # Carregar dados do JSON de notícias
+    with open(os.path.join(script_dir, 'chat_data', 'noticias.json'), 'r', encoding='utf-8') as file:
+        dados_noticias = json.load(file)
+
+    # Buscar vagas de emprego por área de atuação
+    for vaga in dados_vagas['vagas']:
+        if area.lower() in vaga['areaAtuacao'].lower():
+            vagas_encontradas.append(vaga)
+
+    # Buscar cursos por área de atuação
+    for curso in dados_cursos['cursos']:
+        if area.lower() in curso['areaAtuacao'].lower():
+            cursos_encontrados.append(curso)
+
+    # Buscar notícias por área de atuação
+    for noticia in dados_noticias['noticias']:
+        if area.lower() in noticia['areaAtuacao'].lower():
+            noticias_encontradas.append(noticia)
+
+    return jsonify({
+        "vagas": vagas_encontradas,
+        "cursos": cursos_encontrados,
+        "noticias": noticias_encontradas
+    })
+
 # Rota para a página inicial
 @app.route("/")
 def index():
