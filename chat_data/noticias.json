@@ -76,6 +76,35 @@
             "descricao": "Novos sistemas de construção prometem revolucionar o mercado.",
             "fonte": "CNN",
             "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novidades em Inteligência Artificial",
+            "areaAtuacao": "Saúde",
+            "descricao": "Novos avanços em IA prometem revolucionar diversas indústrias.",
+            "fonte": "TechCrunch",
+            "data": "2024-06-15"
+        },
+        {
+            "titulo": "Avanços na Medicina",
+            "areaAtuacao": "Saúde",
+            "descricao": "Pesquisadores descobrem novo tratamento para doenças crônicas.",
+            "fonte": "BBC",
+            "data": "2024-06-14"
+        },
+        {
+            "titulo": "Novidades em Inteligência Artificial",
+            "areaAtuacao": "Finanças, Economia",
+            "descricao": "Novos avanços em IA prometem revolucionar diversas indústrias.",
+            "fonte": "TechCrunch",
+            "data": "2024-06-15"
+        },
+        {
+            "titulo": "Avanços na Medicina",
+            "areaAtuacao": "Finanças, Economia",
+            "descricao": "Pesquisadores descobrem novo tratamento para doenças crônicas.",
+            "fonte": "BBC",
+            "data": "2024-06-14"
         }
+
     ]
 }

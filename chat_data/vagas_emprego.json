@@ -149,6 +149,36 @@
             "quantVagas": 2,
             "horas": "40 horas/semana",
             "cnpj": "56.789.012/0001-55"
+        },
+        {
+            "titulo": "Analista Financeiro",
+            "descricao": "Procuramos analista financeiro para integrar nossa equipe.",
+            "areaAtuacao": "Finanças, Economia",
+            "salario": "R$ 6.000,00",
+            "requisitos": ["Graduação em Ciências Contábeis", "Experiência na área", "Conhecimento em Excel"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "67.890.123/0001-44"
+        },
+        {
+            "titulo": "Vigilante",
+            "descricao": "Oportunidade para vigilante em uma empresa líder de mercado.",
+            "areaAtuacao": "Segurança",
+            "salario": "R$ 2.000,00",
+            "requisitos": ["Experiência na área", "Curso de vigilante", "Boa comunicação"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "78.901.234/0001-33"
+        },
+        {
+            "titulo": "Porteiro",
+            "descricao": "Procuramos porteiro para integrar nossa equipe.",
+            "areaAtuacao": "Segurança",
+            "salario": "R$ 1.500,00",
+            "requisitos": ["Experiência na área", "Boa comunicação", "Proatividade"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "89.012.345/0001-22"
         }
     ]
 }

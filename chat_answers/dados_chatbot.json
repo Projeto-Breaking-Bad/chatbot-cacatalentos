@@ -129,8 +129,21 @@
                 "Sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis.",
                 "Sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis."
             ]
+        },
+        {
+            "padrao": "bom dia|bom dia!|boa tarde|boa tarde!|boa noite|boa noite!",
+            "respostas": [
+                "Olá! Como posso ajudar você?",
+                "Oi! Em que posso te ajudar?"
+            ]
+        },
+        {
+            "padrao": "tudo bem|como vai|como está|como está você",
+            "respostas": [
+                "Estou bem, obrigado! Em que posso te ajudar?",
+                "Vou bem, obrigado! Como posso ajudar você?"
+            ]
         }
-
     ],
     "padroes_noticias": [
         "notícias",
@@ -146,7 +159,6 @@
         "notícias de hoje",
         "notícias atuais",
         "notícias importantes"
-
     ],
     "padroes_cursos": [
         "cursos",
@@ -175,7 +187,8 @@
         "oportunidade",
         "empregos",
         "trabalhos",
-        "trabalhar"
-        
+        "trabalhar",
+        "contratação",
+        "contratar"
     ]
 }
