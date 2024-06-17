@@ -15,6 +15,94 @@
             "preco": "R$ 300,00",
             "duracao": "2 meses",
             "link": "https://exemplo.com/curso-web"
+        },
+        {
+            "titulo": "Curso de Telemarketing",
+            "descricao": "Aprenda a vender produtos e serviços por telefone.",
+            "areaAtuacao": "Telemarketing",
+            "preco": "R$ 200,00",
+            "duracao": "1 mês",
+            "link": "https://exemplo.com/curso-telemarketing"
+        },
+        {
+            "titulo": "Curso de Logística",
+            "descricao": "Aprenda a gerenciar a cadeia de suprimentos de uma empresa.",
+            "areaAtuacao": "Logística",
+            "preco": "R$ 400,00",
+            "duracao": "2 meses",
+            "link": "https://exemplo.com/curso-logistica"
+        },
+        {
+            "titulo": "Curso de Gastronomia",
+            "descricao": "Aprenda a cozinhar pratos deliciosos com os melhores chefs.",
+            "areaAtuacao": "Gastronomia",
+            "preco": "R$ 600,00",
+            "duracao": "3 meses",
+            "link": "https://exemplo.com/curso-gastronomia"
+        },
+        {
+            "titulo": "Curso de Administração",
+            "descricao": "Aprenda a gerenciar uma empresa com eficiência e eficácia.",
+            "areaAtuacao": "Administração",
+            "preco": "R$ 500,00",
+            "duracao": "3 meses",
+            "link": "https://exemplo.com/curso-administracao"
+        },
+        {
+            "titulo": "Curso de Industrial, Produção",
+            "descricao": "Aprenda a produzir bens e serviços de forma eficiente e eficaz.",
+            "areaAtuacao": "Industrial, Produção",
+            "preco": "R$ 400,00",
+            "duracao": "2 meses",
+            "link": "https://exemplo.com/curso-industrial-producao"
+        },
+        {
+            "titulo": "Curso de Serviços Gerais",
+            "descricao": "Aprenda a realizar tarefas de limpeza e manutenção em empresas.",
+            "areaAtuacao": "Serviços Gerais",
+            "preco": "R$ 200,00",
+            "duracao": "1 mês",
+            "link": "https://exemplo.com/curso-servicos-gerais"
+        },
+        {
+            "titulo": "Curso de Construção",
+            "descricao": "Aprenda a construir edifícios e obras de infraestrutura.",
+            "areaAtuacao": "Construção",
+            "preco": "R$ 300,00",
+            "duracao": "2 meses",
+            "link": "https://exemplo.com/curso-construcao"
+        },
+        {
+            "titulo": "Curso de Segurança",
+            "descricao": "Aprenda a proteger pessoas e patrimônios de riscos e ameaças.",
+            "areaAtuacao": "Segurança",
+            "preco": "R$ 400,00",
+            "duracao": "2 meses",
+            "link": "https://exemplo.com/curso-seguranca"
+        },
+        {
+            "titulo": "Curso de Finanças, Economia",
+            "descricao": "Aprenda a gerenciar as finanças de uma empresa e a economia de um país.",
+            "areaAtuacao": "Finanças, Economia",
+            "preco": "R$ 500,00",
+            "duracao": "3 meses",
+            "link": "https://exemplo.com/curso-financas-economia"
+        },
+        {
+            "titulo": "Curso de Saúde",
+            "descricao": "Aprenda a cuidar da saúde das pessoas e a prevenir doenças.",
+            "areaAtuacao": "Saúde",
+            "preco": "R$ 600,00",
+            "duracao": "3 meses",
+            "link": "https://exemplo.com/curso-saude"
+        },
+        {
+            "titulo": "Curso de Comercial, Vendas",
+            "descricao": "Aprenda a vender produtos e serviços de forma eficiente e eficaz.",
+            "areaAtuacao": "Comercial, Vendas",
+            "preco": "R$ 400,00",
+            "duracao": "2 meses",
+            "link": "https://exemplo.com/curso-comercial-vendas"
         }
     ]
 }

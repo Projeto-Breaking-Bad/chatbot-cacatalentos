@@ -89,7 +89,7 @@ def chatbot(msg):
                 f"<b>Descrição:</b> {noticia['descricao']}<br>"
                 f"<b>Fonte:</b> {noticia['fonte']}<br>"
                 f"<b>Data:</b> {noticia['data']}<br>"
-                "<br>"
+                "<br><hr><br>"
             )
         # Remove qualquer espaço extra no final
         return resposta.strip()
@@ -104,7 +104,7 @@ def chatbot(msg):
                 f"<b>Preço:</b> {curso['preco']}<br>"
                 f"<b>Duração:</b> {curso['duracao']}<br>"
                 f"<a href='{curso['link']}' target='_blank'>Mais informações</a><br>"
-                "<br>"
+                "<br><hr><br>"
             )
         # Remove qualquer espaço extra no final
         return resposta.strip()
@@ -120,7 +120,7 @@ def chatbot(msg):
                 f"<b>Requisitos:</b> {', '.join(vaga['requisitos'])}<br>"
                 f"<b>Quantidade de Vagas:</b> {vaga['quantVagas']} Horário: {vaga['horas']}<br>"
                 f"<b>CNPJ:</b> {vaga['cnpj']}<br>"
-                "<br>"
+                "<br><hr><br>"
             )
         # Remove qualquer espaço extra no final
         return resposta.strip()

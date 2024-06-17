@@ -192,7 +192,7 @@
                 success: function (data) {
                     var resposta = "";
                     if (data.vagas.length > 0) {
-                        resposta += "<p><strong>Vagas de Emprego:</strong></p>";
+                        resposta += "<br><hr><p class='fs-5 text'><strong>Vagas de Emprego</strong></p><hr>";
                         data.vagas.forEach(function (vaga) {
                             resposta += "<p><b>Título:</b> " + vaga.titulo + "<br>"
                                 + "<b>Área de Atuação:</b> " + vaga.areaAtuacao + "<br>"
@@ -204,7 +204,7 @@
                         });
                     }
                     if (data.cursos.length > 0) {
-                        resposta += "<p><strong>Cursos:</strong></p>";
+                        resposta += "<br><hr><p class='fs-5 text'><strong>Cursos</strong></p><hr>";
                         data.cursos.forEach(function (curso) {
                             resposta += "<p><b>Título:</b> " + curso.titulo + "<br>"
                                 + "<b>Área de Atuação:</b> " + curso.areaAtuacao + "<br>"
@@ -216,7 +216,7 @@
                         });
                     }
                     if (data.noticias.length > 0) {
-                        resposta += "<p><strong>Notícias:</strong></p>";
+                        resposta += "<br><hr><p class='fs-5 text'><strong>Notícias</strong></p><hr>";
                         data.noticias.forEach(function (noticia) {
                             resposta += "<p><b>Título:</b> " + noticia.titulo + "<br>"
                                 + "<b>Área de Atuação:</b> " + noticia.areaAtuacao + "<br>"

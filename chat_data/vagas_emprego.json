@@ -59,6 +59,96 @@
             "quantVagas": 1,
             "horas": "40 horas/semana",
             "cnpj": "67.890.123/0001-44"
+        },
+        {
+            "titulo": "Vendedor",
+            "descricao": "Oportunidade para vendedor em uma empresa líder de mercado.",
+            "areaAtuacao": "Comercial, Vendas",
+            "salario": "R$ 3.000,00",
+            "requisitos": ["Experiência com vendas", "Boa comunicação", "Proatividade"],
+            "quantVagas": 3,
+            "horas": "40 horas/semana",
+            "cnpj": "78.901.234/0001-33"
+        },
+        {
+            "titulo": "Operador de Telemarketing",
+            "descricao": "Procuramos operador de telemarketing para integrar nossa equipe.",
+            "areaAtuacao": "Telemarketing",
+            "salario": "R$ 1.500,00",
+            "requisitos": ["Boa comunicação", "Proatividade", "Ensino médio completo"],
+            "quantVagas": 2,
+            "horas": "30 horas/semana",
+            "cnpj": "89.012.345/0001-22"
+        },
+        {
+            "titulo": "Auxiliar de Logística",
+            "descricao": "Oportunidade para auxiliar de logística em uma empresa líder de mercado.",
+            "areaAtuacao": "Logística",
+            "salario": "R$ 2.000,00",
+            "requisitos": ["Experiência na área", "Ensino médio completo", "Proatividade"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "90.123.456/0001-11"
+        },
+        {
+            "titulo": "Cozinheiro",
+            "descricao": "Procuramos cozinheiro para atuar em nosso restaurante.",
+            "areaAtuacao": "Gastronomia",
+            "salario": "R$ 2.500,00",
+            "requisitos": ["Experiência na área", "Proatividade", "Boa comunicação"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "01.234.567/0001-00"
+        },
+        {
+            "titulo": "Auxiliar Administrativo",
+            "descricao": "Oportunidade para auxiliar administrativo em uma empresa líder de mercado.",
+            "areaAtuacao": "Administração",
+            "salario": "R$ 2.500,00",
+            "requisitos": ["Ensino médio completo", "Boa comunicação", "Proatividade"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "12.345.678/0001-99"
+        },
+        {
+            "titulo": "Operador de Produção",
+            "descricao": "Procuramos operador de produção para integrar nossa equipe.",
+            "areaAtuacao": "Industrial, Produção",
+            "salario": "R$ 2.000,00",
+            "requisitos": ["Ensino médio completo", "Proatividade", "Boa comunicação"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "23.456.789/0001-88"
+        },
+        {
+            "titulo": "Auxiliar de Serviços Gerais",
+            "descricao": "Oportunidade para auxiliar de serviços gerais em uma empresa líder de mercado.",
+            "areaAtuacao": "Serviços Gerais",
+            "salario": "R$ 1.500,00",
+            "requisitos": ["Proatividade", "Boa comunicação", "Ensino fundamental completo"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "34.567.890/0001-77"
+        },
+        {
+            "titulo": "Pedreiro",
+            "descricao": "Procuramos pedreiro para atuar em nossa construtora.",
+            "areaAtuacao": "Construção",
+            "salario": "R$ 2.000,00",
+            "requisitos": ["Experiência na área", "Proatividade", "Boa comunicação"],
+            "quantVagas": 1,
+            "horas": "40 horas/semana",
+            "cnpj": "45.678.901/0001-66"
+        },
+        {
+            "titulo": "Analista de Sistemas",
+            "descricao": "Oportunidade para analista de sistemas em uma empresa líder de mercado.",
+            "areaAtuacao": "TI, Telecomunicações",
+            "salario": "R$ 7.000,00",
+            "requisitos": ["Graduação em Sistemas de Informação", "Experiência na área", "Conhecimento em Java"],
+            "quantVagas": 2,
+            "horas": "40 horas/semana",
+            "cnpj": "56.789.012/0001-55"
         }
     ]
 }

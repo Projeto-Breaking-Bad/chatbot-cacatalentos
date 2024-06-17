@@ -13,6 +13,69 @@
             "descricao": "Pesquisadores descobrem novo tratamento para doenças crônicas.",
             "fonte": "BBC",
             "data": "2024-06-14"
+        },
+        {
+            "titulo": "Novas tecnologias de segurança",
+            "areaAtuacao": "Segurança",
+            "descricao": "Novos sistemas de segurança prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas comercial, vendas",
+            "areaAtuacao": "Comercial, Vendas",
+            "descricao": "Novos sistemas de vendas prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas telemarketing",
+            "areaAtuacao": "Telemarketing",
+            "descricao": "Novos sistemas de telemarketing prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas logística",
+            "areaAtuacao": "Logística",
+            "descricao": "Novos sistemas de logística prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas gastronomia",
+            "areaAtuacao": "Gastronomia",
+            "descricao": "Novos sistemas de gastronomia prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas administração",
+            "areaAtuacao": "Administração",
+            "descricao": "Novos sistemas de administração prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas industrial, produção",
+            "areaAtuacao": "Industrial, Produção",
+            "descricao": "Novos sistemas de industrial, produção prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas serviços gerais",
+            "areaAtuacao": "Serviços Gerais",
+            "descricao": "Novos sistemas de serviços gerais prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
+        },
+        {
+            "titulo": "Novas construção",
+            "areaAtuacao": "Construção",
+            "descricao": "Novos sistemas de construção prometem revolucionar o mercado.",
+            "fonte": "CNN",
+            "data": "2024-06-13"
         }
     ]
 }
