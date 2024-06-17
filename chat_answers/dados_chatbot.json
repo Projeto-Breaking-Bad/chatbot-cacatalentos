@@ -59,25 +59,123 @@
             "respostas": [
                 "TI é uma área em constante crescimento! Existem muitas oportunidades de carreira em tecnologia da informação."
             ]
+        },
+        {
+            "padrao": "qual é o seu nome",
+            "respostas": [
+                "Meu nome é ChatGPT. Em que posso ajudar?",
+                "Você pode me chamar de ChatGPT. Como posso ajudar?"
+            ]
+        },
+        {
+            "padrao": "como você está",
+            "respostas": [
+                "Estou aqui para ajudar! Como posso ajudar você hoje?",
+                "Estou bem, obrigado! Em que posso te ajudar?"
+            ]
+        },
+        {
+            "padrao": "você gosta de ajudar",
+            "respostas": [
+                "Sim, estou aqui para ajudar sempre que possível!",
+                "Definitivamente! Estou aqui para ajudar no que você precisar."
+            ]
+        },
+        {
+            "padrao": "obrigado|obrigada",
+            "respostas": [
+                "De nada! Estou aqui para ajudar.",
+                "Por nada! Estou aqui para ajudar no que você precisar."
+            ]
+        },
+        {
+            "padrao": "qual é a sua função",
+            "respostas": [
+                "Minha função é ajudar a responder perguntas e fornecer informações úteis.",
+                "Estou aqui para ajudar a responder perguntas e fornecer informações úteis."
+            ]
+        },
+        {
+            "padrao": "quem criou você",
+            "respostas": [
+                "Fui criado pela OpenAI. Estou aqui para ajudar a responder perguntas e fornecer informações úteis.",
+                "Fui criado pela OpenAI. Estou aqui para ajudar a responder perguntas e fornecer informações úteis."
+            ]
+        },
+        {
+            "padrao": "você é um robô",
+            "respostas": [
+                "Sim, sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis.",
+                "Sim, sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis."
+            ]
+        },
+        {
+            "padrao": "você é humano",
+            "respostas": [
+                "Não, sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis.",
+                "Não, sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis."
+            ]
+        },
+        {
+            "padrao": "você é inteligente",
+            "respostas": [
+                "Sou um assistente virtual treinado para ajudar a responder perguntas e fornecer informações úteis.",
+                "Sou um assistente virtual treinado para ajudar a responder perguntas e fornecer informações úteis."
+            ]
+        },
+        {
+            "padrao": "você é real",
+            "respostas": [
+                "Sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis.",
+                "Sou um assistente virtual projetado para ajudar a responder perguntas e fornecer informações úteis."
+            ]
         }
+
     ],
     "padroes_noticias": [
         "notícias",
         "últimas notícias",
         "novidades",
-        "atualizações"
+        "atualizações",
+        "informações",
+        "notícias recentes",
+        "notícias do dia",
+        "noticia",
+        "noticias",
+        "news",
+        "notícias de hoje",
+        "notícias atuais",
+        "notícias importantes"
+
     ],
     "padroes_cursos": [
         "cursos",
         "aprender",
         "estudar",
         "formação",
-        "capacitação"
+        "capacitação",
+        "treinamento",
+        "curso",
+        "estudo",
+        "aprendizado",
+        "aulas",
+        "capacitar",
+        "aula",
+        "capacitação profissional",
+        "capacitação técnica",
+        "capacitação online",
+        "capacitação a distância"
     ],
     "padroes_empregos": [
         "emprego",
         "vagas",
         "trabalho",
-        "oportunidades"
+        "oportunidades",
+        "vaga",
+        "oportunidade",
+        "empregos",
+        "trabalhos",
+        "trabalhar"
+        
     ]
 }

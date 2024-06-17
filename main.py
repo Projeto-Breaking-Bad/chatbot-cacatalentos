@@ -130,9 +130,21 @@ def chatbot(msg):
     else:
         sentimento = analisar_sentimento(msg)
         if sentimento == 'NEGATIVE':
-            return "Parece que você está com um sentimento negativo. Como posso ajudar?"
+            respostas_negativas = [
+                "Sinto muito que você esteja se sentindo assim. Posso te ajudar com algo?",
+                "Fique tranquilo! Estou aqui para ajudar. Em que posso ser útil?",
+                "Se precisar de ajuda, estou à disposição para conversar.",
+                "Sinto muito que você esteja se sentindo assim. Como posso ajudar?",
+            ]
+            return random.choice(respostas_negativas)
         elif sentimento == 'POSITIVE':
-            return "Ótimo ver que você está com um sentimento positivo! Em que posso ajudar?"
+            respostas_positivas = [
+                "Ótimo ver que você está com um sentimento positivo! Em que posso ajudar?",
+                "Que bom que você está se sentindo positivo hoje! Como posso ser útil?",
+                "Fico feliz em saber que você está se sentindo bem! Em que posso te ajudar?",
+                "Que ótimo que você está se sentindo assim! Como posso ajudar?",
+            ]
+            return random.choice(respostas_positivas)
         else:
             return "Interessante! Em que mais posso ajudar?"
 

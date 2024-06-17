@@ -47,6 +47,7 @@
                         <button type="button" class="btn btn-secondary"
                             onclick="fillInput('Encontrar cursos')">Cursos</button>
                     </div>
+                    <h4>Pesquise usando seus interesses para encontrar empregos, cursos e notícias relevantes.</h4>
                     <div class="d-flex flex-wrap gap-2 mb-4">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="Comercial, Vendas"
@@ -194,6 +195,7 @@
                         resposta += "<p><strong>Vagas de Emprego:</strong></p>";
                         data.vagas.forEach(function (vaga) {
                             resposta += "<p><b>Título:</b> " + vaga.titulo + "<br>"
+                                + "<b>Área de Atuação:</b> " + vaga.areaAtuacao + "<br>"
                                 + "<b>Descrição:</b> " + vaga.descricao + "<br>"
                                 + "<b>Salário:</b> " + vaga.salario + "<br>"
                                 + "<b>Requisitos:</b> " + vaga.requisitos.join(', ') + "<br>"
@@ -205,6 +207,7 @@
                         resposta += "<p><strong>Cursos:</strong></p>";
                         data.cursos.forEach(function (curso) {
                             resposta += "<p><b>Título:</b> " + curso.titulo + "<br>"
+                                + "<b>Área de Atuação:</b> " + curso.areaAtuacao + "<br>"
                                 + "<b>Descrição:</b> " + curso.descricao + "<br>"
                                 + "<b>Área de Atuação:</b> " + curso.areaAtuacao + "<br>"
                                 + "<b>Preço:</b> " + curso.preco + "<br>"
@@ -216,6 +219,7 @@
                         resposta += "<p><strong>Notícias:</strong></p>";
                         data.noticias.forEach(function (noticia) {
                             resposta += "<p><b>Título:</b> " + noticia.titulo + "<br>"
+                                + "<b>Área de Atuação:</b> " + noticia.areaAtuacao + "<br>"
                                 + "<b>Descrição:</b> " + noticia.descricao + "<br>"
                                 + "<b>Fonte:</b> " + noticia.fonte + "<br>"
                                 + "<b>Data:</b> " + noticia.data + "<br></p>";
@@ -255,7 +259,7 @@
     <script src="{{ url_for('static', filename='js/pages/allchart.js') }}"></script>
 
     <!-- dashboard init -->
-    <script src="{{ url_for('static', filename='js/pages/dashboard.init.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/pages/dashboard.init.js') }}"></script> -->
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
