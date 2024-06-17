@@ -1,0 +1,6 @@
+Flask
+transformers
+nltk
+torch
+torchvision
+torchaudio
