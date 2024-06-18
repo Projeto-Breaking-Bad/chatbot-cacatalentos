@@ -15,6 +15,9 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 app.template_folder = os.path.join(script_dir, 'templates')
 
 # Configura o Flask para usar o caminho relativo ao diretório do script para os arquivos estáticos
+app.static_folder = os.path.join(script_dir, 'assets')
+
+# Configura o Flask para usar o caminho relativo ao diretório do script para os arquivos estáticos
 app.jinja_loader = ChoiceLoader([
     FileSystemLoader(os.path.join(script_dir, 'templates', 'view')),
     FileSystemLoader(os.path.join(script_dir, 'templates', 'components')),
