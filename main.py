@@ -215,6 +215,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.static_folder = os.path.join(script_dir, 'assets')
-    ## app.run(debug=True) # Para executar o servidor de desenvolvimento
-    app.run(host='0.0.0.0', port=5000, debug=True) # Para executar o servidor de produção
+    app.run(debug=True) # Para executar o servidor de desenvolvimento
