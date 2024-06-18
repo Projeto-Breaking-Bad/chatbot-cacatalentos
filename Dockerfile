@@ -16,5 +16,5 @@ EXPOSE 5000
 # Define environment variable
 ENV FLASK_APP=main.py
 
-# Expose Flask application through entrypoint
-ENTRYPOINT ["python", "main.py"]
+# Command to run on container start
+CMD ["flask", "run", "--host=0.0.0.0"]

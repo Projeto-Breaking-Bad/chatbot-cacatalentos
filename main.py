@@ -15,6 +15,9 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 app.template_folder = os.path.join(script_dir, 'templates')
 
 # Configura o Flask para usar o caminho relativo ao diretório do script para os arquivos estáticos
+app.static_folder = os.path.join(script_dir, 'assets')
+
+# Configura o Flask para usar o caminho relativo ao diretório do script para os arquivos estáticos
 app.jinja_loader = ChoiceLoader([
     FileSystemLoader(os.path.join(script_dir, 'templates', 'view')),
     FileSystemLoader(os.path.join(script_dir, 'templates', 'components')),
@@ -212,6 +215,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.static_folder = os.path.join(script_dir, 'assets')
-    app.run(debug=True) # Para executar o servidor de desenvolvimento
-    # app.run(host='0.0.0.0', port=5000, debug=True) # Para executar o servidor de produção
+    app.run(debug=True) # Para executar o servidor de desenvolvimento do Flask
