@@ -16,6 +16,7 @@ O Caça Talentos é um chatbot desenvolvido em Python para ajudar estudantes e p
 - pip install nltk
 - pip install Jinja2
 - pip install transformers
+- pip install gunicorn
 
 ## Endpoints
 
