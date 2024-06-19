@@ -1,1 +1,1 @@
-web: gunicorn main:app --bind 0.0.0.0:5000 --max-memory-per-child 512MB
+web: gunicorn main:app --bind 0.0.0.0:8080 --max-memory-per-child 512MB
